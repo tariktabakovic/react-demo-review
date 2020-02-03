@@ -52,7 +52,7 @@ class App extends React.Component {
     ];  
     
     // modify the copy
-    newValue[index] = newValue;
+    newValues[index] = newValue;
 
     // update state with the new copy 
     this.setState({

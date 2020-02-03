@@ -32,7 +32,7 @@ class Counter extends React.Component {
         // });
     }
     _reduceValue = () =>{
-        const newVal = this.props.value + this.props.changeBy;
+        const newVal = this.props.value - this.props.changeBy;
         this.props.clickHandler(this.props.index, newVal);
         // this.setState({
         //     value: this.state.value - this.state.changeBy
