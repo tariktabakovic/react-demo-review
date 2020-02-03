@@ -15,30 +15,29 @@ class Counter extends React.Component {
                 <h1>
                     {this.state.value}
                 </h1>
-                    <button
-                        onClick= {()=>{
-                        this.setState({
-                            value: this.state.value + this.state.changeBy
-                        });
-                    }}> Add
-                    </button>
-                    <button 
-                        onClick= {()=>{
-                        this.setState({
-                            value: this.state.value - this.state.changeBy
-                        });
-                    }}> Subtract
-                </button>
-                <button 
-                        onClick= {()=>{
-                        this.setState({
-                            value: this.props.initialValue
-                        });
-                    }}> Reset
-                </button>
-                
+                    <button onClick= {this._incrementValue}> Add </button>
+                    <button onClick= {this._reduceValue}> Subtract </button>
+                    <button onClick= {this._resetValue}> Reset </button>
             </div>
         );
+    }
+
+    // Write helper functions as arrow functions. Arrow functions retain the correct
+    // value of the THIS keyword
+    _incrementValue = () => {
+        this.setState({
+            value: this.state.value + this.state.changeBy
+        });
+    }
+    _reduceValue = () =>{
+        this.setState({
+            value: this.state.value - this.state.changeBy
+        });
+    }
+    _resetValue = () => {
+        this.setState({
+            value: this.props.initialValue
+        });
     }
 
 }
